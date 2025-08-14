@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, MapPin, Award, Users, Mic, BarChart, Lightbulb, Leaf, BrainCircuit, HeartPulse, Building, Bus, Tractor, Sparkles, Menu, X, ChevronDown } from 'lucide-react';
 import heroBackground from '../images/bg.png'; // Import your local image
+import gdgLogo from '../images/gdgDark.png'; // Import powered by logo
+import gdgLogodark from '../images/GDGLight.png'; // Import powered by logo
 
 // Helper component for Icons
 const IconWrapper = ({ children }) => (
@@ -93,7 +95,7 @@ const CountdownTimer = () => {
         }
         timerComponents.push(
             <div key={interval} className="text-center">
-                <div className="text-4xl md:text-6xl font-bold text-white">
+                <div className="text-2xl md:text-4xl font-bold text-white">
                     {String(timeLeft[interval]).padStart(2, '0')}
                 </div>
                 <div className="text-sm uppercase text-indigo-200">{interval}</div>
@@ -118,7 +120,7 @@ const Hero = () => (
     ></div>
     {/* This div creates a dark overlay to ensure text is readable */}
     <div className="absolute inset-0 bg-black/60"></div>
-    <div className="container relative z-10 mx-auto px-6 py-20 text-center">
+    <div className="container relative z-10 mx-auto px-6 pt-20 text-center">
       <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-4 animate-fade-in-down">
         HACK KARNATAKA
       </h1>
@@ -137,12 +139,16 @@ const Hero = () => (
       </div>
       <CountdownTimer />
       <div className="space-x-4">
-        <a href="https://hackkarnataka.tech" target="_blank" rel="noopener noreferrer" className="bg-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105 inline-block">
+        <a href="https://hackkarnataka.tech" target="_blank" rel="noopener noreferrer" className="bg-indigo-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105 inline-block">
           Register Now
         </a>
-         <a href="#about" className="bg-white/20 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/30 transition-all duration-300 transform hover:scale-105 inline-block">
+         <a href="#about" className="bg-white/20 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white/30 transition-all duration-300 transform hover:scale-105 inline-block">
           Learn More
         </a>
+      </div>
+      <div className="mt-10 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
+        <p className="text-sm text-gray-400 mb-2">Powered By</p>
+        <img src={gdgLogo} alt="KLE Tech Hub Logo" className="h-24 mx-auto" />
       </div>
     </div>
   </section>
@@ -368,7 +374,7 @@ const PartnerCard = ({ name, logoUrl, websiteUrl }) => (
         <img 
             src={logoUrl} 
             alt={`${name} logo`} 
-            className="h-20 mx-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+            className="h-20 mx-auto object-contain grayscale-[30%] hover:grayscale-0 transition-all duration-300"
             onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/200x100/ffffff/333333?text=Logo+Not+Found'; }}
         />
         <p className="text-center mt-4 font-semibold text-gray-700 dark:text-gray-200">{name}</p>
@@ -385,13 +391,13 @@ const Partners = () => {
     ];
     
     const communityPartners = [
-        { name: "Google Developer Group Hubli", logoUrl: "https://placehold.co/200x100/ffffff/4285f4?text=GDG+Hubli", websiteUrl: "#" },
+        { name: "Google Developer Group Hubli", logoUrl: gdgLogodark, websiteUrl: "#" },
         { name: "Major League Hacking", logoUrl: "https://placehold.co/200x100/000000/ffffff?text=MLH", websiteUrl: "#" },
         { name: "Developer Student Clubs", logoUrl: "https://placehold.co/200x100/ffffff/34a853?text=GDSC", websiteUrl: "#" },
     ];
 
     return (
-        <section id="partners" className="py-20 bg-white dark:bg-gray-900">
+        <section id="partners" className="py-20 bg-white ">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold text-gray-800 dark:text-white">Our Supporters</h2>
@@ -401,12 +407,12 @@ const Partners = () => {
                 <div>
                     <h3 className="text-3xl font-bold text-center text-gray-800 dark:text-white mb-8">Esteemed Partners</h3>
                     <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                        {esteemedPartners.map(partner => <PartnerCard key={partner.name} {...partner} />)}
+                        {esteemedPartners.map(partner => <PartnerCard scr={partner.logoUrl} key={partner.name} {...partner} />)}
                     </div>
                 </div>
 
                 <div className="mt-20">
-                    <h3 className="text-3xl font-bold text-center text-gray-800 dark:text-white mb-8">Community Partners</h3>
+                    <h3 className="text-3xl font-bold text-center text-gray-800 mb-8">Community Partners</h3>
                     <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                         {communityPartners.map(partner => <PartnerCard key={partner.name} {...partner} />)}
                     </div>
