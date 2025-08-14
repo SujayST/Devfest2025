@@ -191,12 +191,6 @@ const SponsorshipCard = ({ tier, cost, features, isFeatured }) => (
 const WhySponsor = () => {
     const tiers = [
         {
-            tier: 'Silver',
-            cost: 300,
-            features: ['Send Swags/Goodies', 'Brand Promotion on Social Media & Website'],
-            isFeatured: false,
-        },
-        {
             tier: 'Gold',
             cost: 500,
             features: [
@@ -204,16 +198,6 @@ const WhySponsor = () => {
                 'Send Mentors/Judges',
                 'Logo on T-shirt/Certificates',
                 'Webinar/Tech Talk',
-            ],
-            isFeatured: true,
-        },
-        {
-            tier: 'Platinum',
-            cost: 750,
-            features: [
-                'All Gold benefits',
-                'Participant Info Before Event',
-                'Keynote Speaker Status',
             ],
             isFeatured: false,
         },
@@ -225,8 +209,24 @@ const WhySponsor = () => {
                 'Inaugural/Closing Remarks',
                 'Primary branding as Title Sponsor',
             ],
-            isFeatured: false,
+            isFeatured: true,
         },
+        {
+            tier: 'Platinum',
+            cost: 750,
+            features: [
+                'All Gold benefits',
+                'Participant Info Before Event',
+                'Keynote Speaker Status',
+            ],
+            isFeatured: true,
+        },
+        {
+            tier: 'Silver',
+            cost: 300,
+            features: ['Send Swags/Goodies', 'Brand Promotion on Social Media & Website'],
+            isFeatured: false,
+        }
     ];
 
     return (
