@@ -3,7 +3,11 @@ import { Calendar, MapPin, Award, Users, Mic, BarChart, Lightbulb, Leaf, BrainCi
 import heroBackground from '../images/bg.png'; // Import your local image
 import gdgLogo from '../images/gdgDark.png'; // Import powered by logo
 import gdgLogodark from '../images/GDGLight.png'; // Import powered by logo
-
+import gcloud from '../images/pngegg.png'; // Import Google Cloud logo
+import kletech from '../images/KLETech.png'; // Import KLE Tech logo
+import wtm from '../images/Group 107.png'; // Import WTM logo
+import mlh from '../images/image.png'; // Import MLH logo
+import kar from '../images/kar.png'; // Import Karnataka Tourism logo
 // Helper component for Icons
 const IconWrapper = ({ children }) => (
   <div className="bg-indigo-100 dark:bg-indigo-900/50 p-3 rounded-full">
@@ -113,21 +117,21 @@ const CountdownTimer = () => {
 
 // Hero Section
 const Hero = () => (
-  <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden text-white">
+  <section className="relative flex min-h-screen items-center justify-center overflow-hidden text-white">
     <div 
       className="absolute inset-0 bg-cover bg-center"
       style={{ backgroundImage: `url(${heroBackground})` }}
     ></div>
     {/* This div creates a dark overlay to ensure text is readable */}
     <div className="absolute inset-0 bg-black/60"></div>
-    <div className="container relative z-10 mx-auto px-6 pt-20 text-center">
-      <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-4 animate-fade-in-down">
+    <div className="container relative z-10 mx-auto px-6 py-20 text-center">
+      <h1 className="text-4xl sm:text-5xl md:text-8xl font-extrabold leading-tight mb-4 animate-fade-in-down">
         HACK KARNATAKA
       </h1>
-      <p className="text-2xl md:text-3xl text-indigo-300 mb-6 font-light animate-fade-in-up">
+      <p className="text-xl sm:text-2xl md:text-3xl text-indigo-300 mb-6 font-light animate-fade-in-up">
         Heritage | Nature | Future
       </p>
-      <div className="flex justify-center items-center space-x-6 mb-8 text-lg">
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-8 text-base sm:text-lg">
         <div className="flex items-center space-x-2">
           <Calendar className="text-indigo-400" />
           <span>November 8th - 9th, 2025</span>
@@ -139,16 +143,16 @@ const Hero = () => (
       </div>
       <CountdownTimer />
       <div className="space-x-4">
-        <a href="https://hackkarnataka.tech" target="_blank" rel="noopener noreferrer" className="bg-indigo-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105 inline-block">
+        <a href="https://hackkarnataka.tech" target="_blank" rel="noopener noreferrer" className="bg-indigo-600 text-white px-6 py-3 sm:px-6 sm:py-2 rounded-full text-lg sm:text-base font-semibold hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105 inline-block">
           Register Now
         </a>
-         <a href="#about" className="bg-white/20 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white/30 transition-all duration-300 transform hover:scale-105 inline-block">
+         <a href="#about" className="bg-white/20 text-white px-6 py-3 sm:px-8 rounded-full text-lg font-semibold hover:bg-white/30 transition-all duration-300 transform hover:scale-105 inline-block">
           Learn More
         </a>
       </div>
       <div className="mt-10 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
         <p className="text-sm text-gray-400 mb-2">Powered By</p>
-        <img src={gdgLogo} alt="KLE Tech Hub Logo" className="h-24 mx-auto" />
+        <img src={gdgLogo} alt="KLE Tech Hub Logo" className="h-16 sm:h-20 mx-auto" />
       </div>
     </div>
   </section>
@@ -176,7 +180,7 @@ const About = () => (
 
 // Sponsorship Card Component
 const SponsorshipCard = ({ tier, cost, features, isFeatured }) => (
-    <div className={`border-2 ${isFeatured ? 'border-indigo-500' : 'border-gray-200 dark:border-gray-700'} rounded-lg p-8 flex flex-col h-full shadow-lg ${isFeatured ? 'transform scale-105 bg-gray-50 dark:bg-gray-800' : 'bg-white dark:bg-gray-800'}`}>
+    <div className={`border-2 ${isFeatured ? 'border-indigo-500' : 'border-gray-200 dark:border-gray-700'} rounded-lg p-8 flex flex-col h-full shadow-lg ${isFeatured ? 'transform md:scale-105 bg-gray-50 dark:bg-gray-800' : 'bg-white dark:bg-gray-800'}`}>
         <h3 className="text-2xl font-bold text-gray-800 dark:text-white">{tier}</h3>
         <p className="text-4xl font-extrabold my-4 text-gray-900 dark:text-white">${cost}<span className="text-base font-normal text-gray-500 dark:text-gray-400">/event</span></p>
         <ul className="space-y-3 text-gray-600 dark:text-gray-300 mb-8 flex-grow">
@@ -197,6 +201,28 @@ const SponsorshipCard = ({ tier, cost, features, isFeatured }) => (
 const WhySponsor = () => {
     const tiers = [
         {
+            tier: 'Title',
+            cost: 1000,
+            features: [
+                'All Platinum benefits',
+                'Inaugural/Closing Remarks',
+                'Primary branding as Title Sponsor',
+                'Dedicated booth space',
+            ],
+            isFeatured: true,
+        },
+        {
+            tier: 'Platinum',
+            cost: 750,
+            features: [
+                'All Gold benefits',
+                'Keynote Speaker Status',
+                'Logo on main stage banner',
+                'Dedicated Problem Statements',
+            ],
+            isFeatured: true,
+        },
+        {
             tier: 'Gold',
             cost: 500,
             features: [
@@ -206,26 +232,6 @@ const WhySponsor = () => {
                 'Webinar/Tech Talk',
             ],
             isFeatured: false,
-        },
-        {
-            tier: 'Title',
-            cost: 1000,
-            features: [
-                'All Platinum benefits',
-                'Inaugural/Closing Remarks',
-                'Primary branding as Title Sponsor',
-            ],
-            isFeatured: true,
-        },
-        {
-            tier: 'Platinum',
-            cost: 750,
-            features: [
-                'All Gold benefits',
-                'Participant Info Before Event',
-                'Keynote Speaker Status',
-            ],
-            isFeatured: true,
         },
         {
             tier: 'Silver',
@@ -242,7 +248,7 @@ const WhySponsor = () => {
                     <h2 className="text-4xl font-bold text-gray-800 dark:text-white">Sponsorship Packages</h2>
                     <p className="text-indigo-500 dark:text-indigo-400 mt-2 text-lg">Connect with the next generation of tech leaders.</p>
                 </div>
-                <div className="grid lg:grid-cols-4 gap-8 max-w-7xl mx-auto items-stretch">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto items-stretch">
                     {tiers.map(tier => <SponsorshipCard key={tier.tier} {...tier} />)}
                 </div>
                  <div className="text-center mt-12 text-lg text-gray-600 dark:text-gray-300">
@@ -339,18 +345,18 @@ const Prizes = () => (
         <h2 className="text-4xl font-bold text-gray-800 dark:text-white">Prizes & Recognition</h2>
         <p className="text-indigo-500 dark:text-indigo-400 mt-2 text-lg">Over ₹10 Lakhs in prizes to be won!</p>
       </div>
-      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        <div className="bg-gray-100 w-[80%] ml-[20%] dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center border-2 border-gray-300 dark:border-gray-700">
+      <div className="flex flex-col md:grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
+        <div className="bg-gray-100 dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center border-2 border-gray-300 dark:border-gray-700 w-full max-w-sm order-2 md:order-1">
           <p className="text-2xl font-semibold text-gray-500 dark:text-gray-400">2nd Place</p>
           <p className="text-5xl font-bold text-gray-800 dark:text-white my-4">₹50,000</p>
           <p className="text-gray-600 dark:text-gray-300">Cash Prize</p>
         </div>
-        <div className="bg-gradient-to-br from-yellow-300 to-orange-400 p-8 rounded-lg shadow-2xl text-center text-white transform md:scale-110 border-2 border-yellow-500">
+        <div className="bg-gradient-to-br from-yellow-300 to-orange-400 p-8 rounded-lg shadow-2xl text-center text-white transform md:scale-110 border-2 border-yellow-500 w-full max-w-sm order-1 md:order-2">
           <p className="text-2xl font-semibold">1st Place</p>
           <p className="text-6xl font-bold my-4">₹1,00,000</p>
           <p className="font-medium">Cash Prize</p>
         </div>
-        <div className="bg-gray-100 w-[80%] dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center border-2 border-gray-300 dark:border-gray-700">
+        <div className="bg-gray-100 dark:bg-gray-800 p-8 rounded-lg shadow-lg text-center border-2 border-gray-300 dark:border-gray-700 w-full max-w-sm order-3">
           <p className="text-2xl font-semibold text-gray-500 dark:text-gray-400">3rd Place</p>
           <p className="text-5xl font-bold text-gray-800 dark:text-white my-4">₹25,000</p>
           <p className="text-gray-600 dark:text-gray-300">Cash Prize</p>
@@ -374,7 +380,7 @@ const PartnerCard = ({ name, logoUrl, websiteUrl }) => (
         <img 
             src={logoUrl} 
             alt={`${name} logo`} 
-            className="h-20 mx-auto object-contain grayscale-[30%] hover:grayscale-0 transition-all duration-300"
+            className="h-20 mx-auto object-contain grayscale-[10%] hover:grayscale-0 transition-all duration-300"
             onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/200x100/ffffff/333333?text=Logo+Not+Found'; }}
         />
         <p className="text-center mt-4 font-semibold text-gray-700 dark:text-gray-200">{name}</p>
@@ -385,19 +391,19 @@ const PartnerCard = ({ name, logoUrl, websiteUrl }) => (
 // Partners Section
 const Partners = () => {
     const esteemedPartners = [
-        { name: "Google Cloud", logoUrl: "https://placehold.co/200x100/ffffff/1a73e8?text=Google+Cloud", websiteUrl: "#" },
-        { name: "KLE Technological University", logoUrl: "https://placehold.co/200x100/ffffff/d62828?text=KLE+Tech", websiteUrl: "#" },
-        { name: "Karnataka Tourism", logoUrl: "https://placehold.co/200x100/ffffff/f77f00?text=Karnataka+Tourism", websiteUrl: "#" },
+        { name: "Google Cloud", logoUrl: gcloud, websiteUrl: "#" },
+        { name: "KLE Technological University", logoUrl: kletech, websiteUrl: "#" },
+        { name: "Karnataka Tourism Dept", logoUrl: kar , websiteUrl: "#" },
     ];
     
     const communityPartners = [
         { name: "Google Developer Group Hubli", logoUrl: gdgLogodark, websiteUrl: "#" },
-        { name: "Major League Hacking", logoUrl: "https://placehold.co/200x100/000000/ffffff?text=MLH", websiteUrl: "#" },
-        { name: "Developer Student Clubs", logoUrl: "https://placehold.co/200x100/ffffff/34a853?text=GDSC", websiteUrl: "#" },
+        { name: "Major League Hacking", logoUrl: mlh, websiteUrl: "#" },
+        { name: "Women Techmakers", logoUrl: wtm, websiteUrl: "#" },
     ];
 
     return (
-        <section id="partners" className="py-20 bg-white ">
+        <section id="partners" className="py-20 bg-gray-50 dark:bg-gray-800">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold text-gray-800 dark:text-white">Our Supporters</h2>
@@ -407,12 +413,12 @@ const Partners = () => {
                 <div>
                     <h3 className="text-3xl font-bold text-center text-gray-800 dark:text-white mb-8">Esteemed Partners</h3>
                     <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                        {esteemedPartners.map(partner => <PartnerCard scr={partner.logoUrl} key={partner.name} {...partner} />)}
+                        {esteemedPartners.map(partner => <PartnerCard key={partner.name} {...partner} />)}
                     </div>
                 </div>
 
                 <div className="mt-20">
-                    <h3 className="text-3xl font-bold text-center text-gray-800 mb-8">Community Partners</h3>
+                    <h3 className="text-3xl font-bold text-center text-gray-800 dark:text-white mb-8">Community Partners</h3>
                     <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                         {communityPartners.map(partner => <PartnerCard key={partner.name} {...partner} />)}
                     </div>
@@ -491,7 +497,7 @@ const Footer = () => (
       </div>
       <div className="mt-12 border-t border-gray-800 pt-8 text-center text-gray-500">
         <p>&copy; {new Date().getFullYear()} Hack Karnataka. All rights reserved.</p>
-        <p className="text-sm mt-2">Website: <a href="https://hackkarnataka.tech" className="text-indigo-400 hover:text-indigo-300">hackkarnataka.tech</a></p>
+        <p className="text-sm mt-2">Website: <a href="https://" className="text-indigo-400 hover:text-indigo-300">hackkarnataka.tech</a></p>
       </div>
     </div>
   </footer>
@@ -499,7 +505,7 @@ const Footer = () => (
 
 
 // Main App Component
-export default function App() {
+export default function LandingPage() {
   // A simple dark mode toggle for demonstration
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -524,11 +530,11 @@ export default function App() {
       <main>
         <Hero />
         <About />
-        <WhySponsor />
         <Tracks />
         <Highlights />
         <Prizes />
         <Partners />
+        <WhySponsor />
         <FAQ />
       </main>
       <Footer />
