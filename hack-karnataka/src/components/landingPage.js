@@ -124,13 +124,14 @@ const Hero = () => (
     ></div>
     {/* This div creates a dark overlay to ensure text is readable */}
     <div className="absolute inset-0 bg-black/60"></div>
-    <div className="container relative z-10 mx-auto px-6 py-20 text-center">
-      <h1 className="text-4xl sm:text-5xl md:text-8xl font-extrabold leading-tight mb-4 animate-fade-in-down">
+    <div className="container relative z-10 mx-auto px-6 pb-20 pt-24 mt-24 text-center">
+      <h1 className="text-5xl sm:text-6xl lg:text-8xl font-extrabold leading-tight mb-4 animate-fade-in-down">
         HACK KARNATAKA
       </h1>
       <p className="text-xl sm:text-2xl md:text-3xl text-indigo-300 mb-6 font-light animate-fade-in-up">
         Heritage | Nature | Future
       </p>
+      <p className="text-xl text-gray-500 max-w-3xl mx-auto my-8 mt-20 animate-fade-in-up" style={{animationDelay: '0.2s'}}>Shaping tomorrow with Agentic systems & Generative AI.</p>
       <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-8 text-base sm:text-lg">
         <div className="flex items-center space-x-2">
           <Calendar className="text-indigo-400" />
@@ -143,10 +144,10 @@ const Hero = () => (
       </div>
       <CountdownTimer />
       <div className="space-x-4">
-        <a href="https://hackkarnataka.tech" target="_blank" rel="noopener noreferrer" className="bg-indigo-600 text-white px-6 py-3 sm:px-6 sm:py-2 rounded-full text-lg sm:text-base font-semibold hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105 inline-block">
+        <a href="https://hackkarnataka.tech" target="_blank" rel="noopener noreferrer" className="bg-indigo-600 text-white px-5 py-2 lg:px-6 lg:py-3 rounded-full text-sm lg:text-lg font-semibold hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105 inline-block">
           Register Now
         </a>
-         <a href="#about" className="bg-white/20 text-white px-6 py-3 sm:px-8 rounded-full text-lg font-semibold hover:bg-white/30 transition-all duration-300 transform hover:scale-105 inline-block">
+         <a href="#about" className="bg-white/20 text-white px-5 py-2 lg:px-6 lg:py-3 rounded-full text-sm lg:text-lg font-semibold hover:bg-white/30 transition-all duration-300 transform hover:scale-105 inline-block">
           Learn More
         </a>
       </div>
@@ -220,7 +221,7 @@ const WhySponsor = () => {
                 'Logo on main stage banner',
                 'Dedicated Problem Statements',
             ],
-            isFeatured: true,
+            isFeatured: false,
         },
         {
             tier: 'Gold',
@@ -300,7 +301,7 @@ const Tracks = () => {
 // Highlights Section
 const Highlights = () => {
     const highlights = [
-        "Keynotes from Google, AWS, and Microsoft",
+        "Key speakers from Google, AWS, and Microsoft",
         "Workshops by Kaggle Grandmasters & ACM ICPC Winners",
         "30-Hour In-Person Hackathon",
         "2000+ Students from 350+ Colleges",
@@ -391,9 +392,10 @@ const PartnerCard = ({ name, logoUrl, websiteUrl }) => (
 // Partners Section
 const Partners = () => {
     const esteemedPartners = [
-        { name: "Google Cloud", logoUrl: gcloud, websiteUrl: "#" },
+        // { name: "Google Cloud", logoUrl: gcloud, websiteUrl: "#" },
         { name: "KLE Technological University", logoUrl: kletech, websiteUrl: "#" },
         { name: "Karnataka Tourism Dept", logoUrl: kar , websiteUrl: "#" },
+        { name: "To be announced", logoUrl: "" , websiteUrl: "#" },
     ];
     
     const communityPartners = [
@@ -474,8 +476,9 @@ const Footer = () => (
       <div className="grid md:grid-cols-3 gap-8">
         <div>
           <h3 className="text-xl font-bold mb-4">Hack Karnataka</h3>
-          <p className="text-gray-400">Heritage | Nature | Future</p>
-          <p className="text-gray-400 mt-2">November 8th-9th, 2025</p>
+          <p className="text-gray-400">Heritage | Nature | Futuree</p>
+          <p className="text-gray-500 mt-2 text-sm italic">Shaping tomorrow with Agentic systems and Generative AI.</p>
+          <p className="text-gray-400 mt-4">November 8th-9th, 2025</p>
           <p className="text-gray-400">KLE Technological University, Hubli</p>
         </div>
         <div>
