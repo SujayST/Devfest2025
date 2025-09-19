@@ -1,18 +1,38 @@
-import React, { useState, useEffect } from 'react';
+
+import React, { useState, useEffect, useId } from 'react';
+import clsx from 'clsx';
 import { Calendar, MapPin, Award, Users, Mic, BarChart, Lightbulb, Leaf, BrainCircuit, HeartPulse, Building, Bus, Tractor, Sparkles, Menu, X, ChevronDown } from 'lucide-react';
 import heroBackground from '../images/bg.png'; // Import your local image
 import gdgLogo from '../images/gdgDark.png'; // Import powered by logo
 import gdgLogodark from '../images/GDGLight.png'; // Import powered by logo
 import gcloud from '../images/pngegg.png'; // Import Google Cloud logo
 import kletech from '../images/KLETech.png'; // Import KLE Tech logo
+import logo from '../images/logo.png'; // Import Hack Karnataka logo
 import wtm from '../images/Group 107.png'; // Import WTM logo
 import mlh from '../images/image.png'; // Import MLH logo
 import kar from '../images/kar.png'; // Import Karnataka Tourism logo
+import { Speakers } from './speaker';
 // Helper component for Icons
 const IconWrapper = ({ children }) => (
   <div className="bg-indigo-100 dark:bg-indigo-900/50 p-3 rounded-full">
     {children}
   </div>
+);
+
+const ImageClipPaths = ({ id, ...props }) => (
+  <svg aria-hidden="true" width={0} height={0} {...props}>
+    <defs>
+      <clipPath id={`${id}-0`} clipPathUnits="objectBoundingBox">
+        <path d="M0,0 h0.729 v0.129 h0.121 l-0.016,0.032 C0.815,0.198,0.843,0.243,0.885,0.243 H1 v0.757 H0.271 v-0.086 l-0.121,0.057 v-0.214 c0,-0.032,-0.026,-0.057,-0.057,-0.057 H0 V0" />
+      </clipPath>
+      <clipPath id={`${id}-1`} clipPathUnits="objectBoundingBox">
+        <path d="M1,1 H0.271 v-0.129 H0.15 l0.016,-0.032 C0.185,0.802,0.157,0.757,0.115,0.757 H0 V0 h0.729 v0.086 l0.121,-0.057 v0.214 c0,0.032,0.026,0.057,0.057,0.057 h0.093 v0.7" />
+      </clipPath>
+      <clipPath id={`${id}-2`} clipPathUnits="objectBoundingBox">
+        <path d="M1,0 H0.271 v0.129 H0.15 l0.016,0.032 C0.185,0.198,0.157,0.243,0.115,0.243 H0 v0.757 h0.729 v-0.086 l0.121,0.057 v-0.214 c0,-0.032,0.026,-0.057,0.057,-0.057 h0.093 V0" />
+      </clipPath>
+    </defs>
+  </svg>
 );
 
 // Header Component
@@ -30,12 +50,11 @@ const Header = () => {
 
   return (
     <header className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-md">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <div className="flex items-center space-x-2">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-indigo-600 dark:text-indigo-400">
-            <path fillRule="evenodd" d="M14.615 1.585a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0V4.44l-4.354 4.353a.75.75 0 01-1.06-1.06l4.353-4.354H9.365a.75.75 0 010-1.5h5.25zM3.75 20.25a.75.75 0 01.75-.75h4.5a.75.75 0 010 1.5H4.5a.75.75 0 01-.75-.75zM19.5 8.635a.75.75 0 01-.75.75h-4.5a.75.75 0 010-1.5h2.69l-4.354-4.353a.75.75 0 111.06-1.06l4.354 4.353V4.635a.75.75 0 011.5 0v4zM20.25 15a.75.75 0 01-.75.75h-4.5a.75.75 0 010-1.5h4.5a.75.75 0 01.75.75zM3.75 9.365a.75.75 0 01.75-.75h4.5a.75.75 0 010 1.5H6.44l4.354 4.353a.75.75 0 01-1.06 1.06L5.385 9.815v2.69a.75.75 0 01-1.5 0v-5.25a.75.75 0 01.75-.75z" clipRule="evenodd" />
-          </svg>
-          <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Hack Karnataka</h1>
+      
+          <img src={logo} alt="Hack Karnataka Logo" className="h-40 sm:h-10 md:h-16 mx-auto" />
+       
         </div>
         <nav className="hidden md:flex space-x-8">
           {navLinks.map(link => (
@@ -43,8 +62,10 @@ const Header = () => {
           ))}
         </nav>
         <div className="hidden md:block">
-            <a href="#sponsors" className="bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105">Sponsor Us</a>
-        </div>
+            <a href="https://hackkarnataka.tech" target="_blank" rel="noopener noreferrer" className="bg-indigo-600 text-white px-5 py-2 lg:px-6 lg:py-3 rounded-full text-sm lg:text-lg font-semibold hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105 inline-block">
+              Register Now
+            </a>
+         </div>
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)} className="text-gray-800 dark:text-white">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -57,7 +78,7 @@ const Header = () => {
             {navLinks.map(link => (
               <a key={link.name} href={link.href} onClick={() => setIsOpen(false)} className="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">{link.name}</a>
             ))}
-            <a href="#sponsors" onClick={() => setIsOpen(false)} className="bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition-all duration-300">Sponsor Us</a>
+            <a href="#Register Now" onClick={() => setIsOpen(false)} className="bg-indigo-600 text-white px-6 py-4 rounded-full hover:bg-indigo-700 transition-all duration-300">Register Now</a>
           </nav>
         </div>
       )}
@@ -131,7 +152,7 @@ const Hero = () => (
       <p className="text-xl sm:text-2xl md:text-3xl text-indigo-300 mb-6 font-light animate-fade-in-up">
         Heritage | Nature | Future
       </p>
-      <p className="text-xl text-gray-500 max-w-3xl mx-auto my-8 mt-20 animate-fade-in-up" style={{animationDelay: '0.2s'}}>Shaping tomorrow with Agentic systems & Generative AI.</p>
+      <p className="text-2xl text-white/60 max-w-3xl mx-auto my-8 mt-16 animate-fade-in-up tracking-wid" style={{animationDelay: '0.2s'}}>Shaping tomorrow with Agentic systems & Generative AI.</p>
       <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-8 text-base sm:text-lg">
         <div className="flex items-center space-x-2">
           <Calendar className="text-indigo-400" />
@@ -152,8 +173,11 @@ const Hero = () => (
         </a>
       </div>
       <div className="mt-10 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
-        <p className="text-sm text-gray-400 mb-2">Powered By</p>
-        <img src={gdgLogo} alt="KLE Tech Hub Logo" className="h-16 sm:h-20 mx-auto" />
+        <p className="text-sm text-gray-400 mb-4">Powered By</p>
+        <div className="flex justify-center items-center space-x-8">
+          <img src={kletech} alt="KLE Technological University Logo" className="h-12 sm:h-16" />
+          <img src={gdgLogo} alt="Google Developer Group Hubli Logo" className="h-16 sm:h-20" />
+        </div>
       </div>
     </div>
   </section>
@@ -164,7 +188,10 @@ const About = () => (
   <section id="about" className="py-20 bg-white dark:bg-gray-900">
     <div className="container mx-auto px-6">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-gray-800 dark:text-white">What is Hack Karnataka?</h2>
+          <h1 className="font-display text-5xl font-bold tracking-tighter text-blue-600 sm:text-7xl">
+            About -  Hack Karnataka
+          </h1>
+        {/* <h2 className="text-4xl font-bold text-gray-800 dark:text-white">What is Hack Karnataka?</h2> */}
         <p className="text-indigo-500 dark:text-indigo-400 mt-2 text-lg">Igniting Innovation, Problem-Solving, and Entrepreneurial Thinking</p>
       </div>
       <div className="max-w-4xl mx-auto text-lg text-gray-600 dark:text-gray-300 leading-relaxed space-y-6 text-justify">
@@ -266,29 +293,56 @@ const WhySponsor = () => {
 
 // Tracks Section
 const Tracks = () => {
+  let id = useId();
   const tracks = [
-    { name: 'Nature & Sustainability', icon: <Leaf className="w-8 h-8 text-green-500" /> },
-    { name: 'Generative AI for Good', icon: <BrainCircuit className="w-8 h-8 text-purple-500" /> },
-    { name: 'HealthTech & Wellness', icon: <HeartPulse className="w-8 h-8 text-red-500" /> },
-    { name: 'Culture & Tourism Tech', icon: <Building className="w-8 h-8 text-yellow-500" /> },
-    { name: 'Smart Cities & Future Living', icon: <Bus className="w-8 h-8 text-blue-500" /> },
-    { name: 'AgriTech & Rural Innovation', icon: <Tractor className="w-8 h-8 text-orange-500" /> },
-    { name: 'Open Innovation', icon: <Sparkles className="w-8 h-8 text-pink-500" /> },
+    { name: 'Nature & Sustainability', icon: <Leaf className="w-8 h-8 text-green-500" />, description: 'Develop solutions for environmental challenges, promoting a greener future.', bgImage: heroBackground },
+    { name: 'Generative AI for Good', icon: <BrainCircuit className="w-8 h-8 text-purple-500" />, description: 'Leverage generative AI to address social issues and create positive impact.', bgImage: heroBackground },
+    { name: 'HealthTech & Wellness', icon: <HeartPulse className="w-8 h-8 text-red-500" />, description: 'Innovate in healthcare with technology to improve patient outcomes and well-being.', bgImage: heroBackground },
+    { name: 'Culture & Tourism Tech', icon: <Building className="w-8 h-8 text-yellow-500" />, description: 'Enhance cultural heritage and tourism experiences through digital solutions.', bgImage: heroBackground },
+    { name: 'Smart Cities & Future Living', icon: <Bus className="w-8 h-8 text-blue-500" />, description: 'Build technologies for smarter, more efficient, and sustainable urban environments.', bgImage: heroBackground },
+    { name: 'AgriTech & Rural Innovation', icon: <Tractor className="w-8 h-8 text-orange-500" />, description: 'Create solutions to modernize agriculture and empower rural communities.', bgImage: heroBackground },
+    // { name: 'Open Innovation', icon: <Sparkles className="w-8 h-8 text-pink-500" />, description: 'Bring your most creative and groundbreaking ideas to life, with no thematic constraints.' },
   ];
 
   return (
     <section id="tracks" className="py-20 bg-white dark:bg-gray-900">
+      <ImageClipPaths id={id} />
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-800 dark:text-white">Hackathon Tracks</h2>
           <p className="text-indigo-500 dark:text-indigo-400 mt-2 text-lg">Innovate across diverse and impactful themes.</p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-20 max-w-6xl mx-auto">
           {tracks.map((track, index) => (
-            <div key={index} className="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-              <div className="flex items-center space-x-4">
-                <IconWrapper>{track.icon}</IconWrapper>
-                <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">{track.name}</h3>
+            <div key={index}>
+              <div className="group relative h-[17.5rem] transform overflow-hidden rounded-3xl">
+                <div
+                  className={clsx(
+                    'absolute top-0 right-4 bottom-6 left-0 rounded-3xl border transition duration-300 group-hover:scale-95 xl:right-6',
+                    [
+                      'border-blue-300',
+                      'border-indigo-300',
+                      'border-sky-300',
+                    ][index % 3],
+                  )}
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{ clipPath: `url(#${id}-${index % 3})` }}
+                >
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
+                    style={{ backgroundImage: `url(${track.bgImage})` }}
+                  ></div>
+                  <div className="absolute inset-0 bg-gray-900/75"></div>
+                  <div className="relative flex flex-col items-center justify-center h-full p-6 text-center">
+                    <IconWrapper>{track.icon}</IconWrapper>
+                    <h3 className="mt-6 text-xl font-semibold text-white">{track.name}</h3>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-indigo-700/80 flex flex-col items-center justify-center p-6 text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-indigo-50 text-m">{track.description}</p>
+                </div>
               </div>
             </div>
           ))}
@@ -297,6 +351,7 @@ const Tracks = () => {
     </section>
   );
 };
+
 
 // Highlights Section
 const Highlights = () => {
@@ -400,7 +455,7 @@ const Partners = () => {
     
     const communityPartners = [
         { name: "Google Developer Group Hubli", logoUrl: gdgLogodark, websiteUrl: "#" },
-        { name: "Major League Hacking", logoUrl: mlh, websiteUrl: "#" },
+        { name: "To be announced", logoUrl: "" , websiteUrl: "#" },
         { name: "Women Techmakers", logoUrl: wtm, websiteUrl: "#" },
     ];
 
@@ -534,6 +589,7 @@ export default function LandingPage() {
         <Hero />
         <About />
         <Tracks />
+        <Speakers/>
         <Highlights />
         <Prizes />
         <Partners />
