@@ -1,9 +1,11 @@
 {
   "files": {
-    "main.css": "/Devfest2025/static/css/main.63529c34.css",
-    "main.js": "/Devfest2025/static/js/main.191d3d77.js",
+    "main.css": "/Devfest2025/static/css/main.6d4886c9.css",
+    "main.js": "/Devfest2025/static/js/main.99a555a5.js",
     "static/js/453.863b37a4.chunk.js": "/Devfest2025/static/js/453.863b37a4.chunk.js",
     "static/media/bg.png": "/Devfest2025/static/media/bg.5258a9b7b7f0d3212fab.png",
+    "static/media/dianne-guilianelli.jpg": "/Devfest2025/static/media/dianne-guilianelli.d8902bf436db495d134c.jpg",
+    "static/media/logo.png": "/Devfest2025/static/media/logo.38d8ebc806c4cbfa79fd.png",
     "static/media/GDGLight.png": "/Devfest2025/static/media/GDGLight.84dd4e6ad35e330ebeca.png",
     "static/media/gdgDark.png": "/Devfest2025/static/media/gdgDark.d2f38f94c92ee0f0fe0d.png",
     "static/media/pngegg.png": "/Devfest2025/static/media/pngegg.6219babb1926d8ad1554.png",
@@ -12,12 +14,12 @@
     "static/media/KLETech.png": "/Devfest2025/static/media/KLETech.37b68960a9d8f6ba0d62.png",
     "static/media/Group 107.png": "/Devfest2025/static/media/Group 107.633b318dd77cf23963fa.png",
     "index.html": "/Devfest2025/index.html",
-    "main.63529c34.css.map": "/Devfest2025/static/css/main.63529c34.css.map",
-    "main.191d3d77.js.map": "/Devfest2025/static/js/main.191d3d77.js.map",
+    "main.6d4886c9.css.map": "/Devfest2025/static/css/main.6d4886c9.css.map",
+    "main.99a555a5.js.map": "/Devfest2025/static/js/main.99a555a5.js.map",
     "453.863b37a4.chunk.js.map": "/Devfest2025/static/js/453.863b37a4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.63529c34.css",
-    "static/js/main.191d3d77.js"
+    "static/css/main.6d4886c9.css",
+    "static/js/main.99a555a5.js"
   ]
 }
