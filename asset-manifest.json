@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Devfest2025/static/css/main.f5d49b65.css",
-    "main.js": "/Devfest2025/static/js/main.b80e0bb8.js",
+    "main.css": "/Devfest2025/static/css/main.2d7364d6.css",
+    "main.js": "/Devfest2025/static/js/main.6833cb22.js",
     "static/js/453.863b37a4.chunk.js": "/Devfest2025/static/js/453.863b37a4.chunk.js",
     "static/media/bg.png": "/Devfest2025/static/media/bg.5258a9b7b7f0d3212fab.png",
     "static/media/speaker5.jpg": "/Devfest2025/static/media/speaker5.8dad6ee732b0c2cdf152.jpg",
@@ -26,12 +26,12 @@
     "static/media/Group 107.png": "/Devfest2025/static/media/Group 107.633b318dd77cf23963fa.png",
     "static/media/kle.png": "/Devfest2025/static/media/kle.ea1444eef15409b08e05.png",
     "index.html": "/Devfest2025/index.html",
-    "main.f5d49b65.css.map": "/Devfest2025/static/css/main.f5d49b65.css.map",
-    "main.b80e0bb8.js.map": "/Devfest2025/static/js/main.b80e0bb8.js.map",
+    "main.2d7364d6.css.map": "/Devfest2025/static/css/main.2d7364d6.css.map",
+    "main.6833cb22.js.map": "/Devfest2025/static/js/main.6833cb22.js.map",
     "453.863b37a4.chunk.js.map": "/Devfest2025/static/js/453.863b37a4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f5d49b65.css",
-    "static/js/main.b80e0bb8.js"
+    "static/css/main.2d7364d6.css",
+    "static/js/main.6833cb22.js"
   ]
 }
