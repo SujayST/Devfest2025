@@ -1,25 +1,37 @@
 {
   "files": {
-    "main.css": "/Devfest2025/static/css/main.6d4886c9.css",
-    "main.js": "/Devfest2025/static/js/main.99a555a5.js",
+    "main.css": "/Devfest2025/static/css/main.37dabbcd.css",
+    "main.js": "/Devfest2025/static/js/main.c4904b1b.js",
     "static/js/453.863b37a4.chunk.js": "/Devfest2025/static/js/453.863b37a4.chunk.js",
     "static/media/bg.png": "/Devfest2025/static/media/bg.5258a9b7b7f0d3212fab.png",
-    "static/media/dianne-guilianelli.jpg": "/Devfest2025/static/media/dianne-guilianelli.d8902bf436db495d134c.jpg",
+    "static/media/speaker5.jpg": "/Devfest2025/static/media/speaker5.8dad6ee732b0c2cdf152.jpg",
+    "static/media/speaker2.jpg": "/Devfest2025/static/media/speaker2.88dc4a774dc48460a9e9.jpg",
+    "static/media/speaker3.jpg": "/Devfest2025/static/media/speaker3.9984039d2384558630f8.jpg",
+    "static/media/speaker4.jpg": "/Devfest2025/static/media/speaker4.1b122e9d0ba56c72ba2c.jpg",
+    "static/media/speaker6.jpg": "/Devfest2025/static/media/speaker6.d8902bf436db495d134c.jpg",
+    "static/media/speaker1.jpg": "/Devfest2025/static/media/speaker1.439d7ed011bda6f5606a.jpg",
     "static/media/logo.png": "/Devfest2025/static/media/logo.38d8ebc806c4cbfa79fd.png",
+    "static/media/hack.png": "/Devfest2025/static/media/hack.b767d9d618f3ce660003.png",
+    "static/media/logoVertical.png": "/Devfest2025/static/media/logoVertical.59c539cf47ca1c8f187c.png",
+    "static/media/track6.png": "/Devfest2025/static/media/track6.f8e0b9a9ab861f13507b.png",
+    "static/media/track5.png": "/Devfest2025/static/media/track5.48547d509cca9210191e.png",
     "static/media/GDGLight.png": "/Devfest2025/static/media/GDGLight.84dd4e6ad35e330ebeca.png",
     "static/media/gdgDark.png": "/Devfest2025/static/media/gdgDark.d2f38f94c92ee0f0fe0d.png",
     "static/media/pngegg.png": "/Devfest2025/static/media/pngegg.6219babb1926d8ad1554.png",
+    "static/media/track1.png": "/Devfest2025/static/media/track1.75edaf694664d26e8e14.png",
+    "static/media/track2.png": "/Devfest2025/static/media/track2.8ed6f2d2c4c79326400f.png",
     "static/media/kar.png": "/Devfest2025/static/media/kar.5a49f3281a3855d4cd30.png",
+    "static/media/track3.png": "/Devfest2025/static/media/track3.9da533f28eaa21743594.png",
     "static/media/image.png": "/Devfest2025/static/media/image.6368ab986036370cb023.png",
     "static/media/KLETech.png": "/Devfest2025/static/media/KLETech.37b68960a9d8f6ba0d62.png",
     "static/media/Group 107.png": "/Devfest2025/static/media/Group 107.633b318dd77cf23963fa.png",
     "index.html": "/Devfest2025/index.html",
-    "main.6d4886c9.css.map": "/Devfest2025/static/css/main.6d4886c9.css.map",
-    "main.99a555a5.js.map": "/Devfest2025/static/js/main.99a555a5.js.map",
+    "main.37dabbcd.css.map": "/Devfest2025/static/css/main.37dabbcd.css.map",
+    "main.c4904b1b.js.map": "/Devfest2025/static/js/main.c4904b1b.js.map",
     "453.863b37a4.chunk.js.map": "/Devfest2025/static/js/453.863b37a4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6d4886c9.css",
-    "static/js/main.99a555a5.js"
+    "static/css/main.37dabbcd.css",
+    "static/js/main.c4904b1b.js"
   ]
 }
